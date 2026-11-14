@@ -1,0 +1,98 @@
+{
+  "seed": 42,
+  "data_sha256": "a6bcf826782d3c0fbfdcbeead17cd0884185a0dafe8ff10cd48a874ee7ba18be",
+  "rows": 731,
+  "features": [
+    "temp",
+    "hum",
+    "windspeed",
+    "trend",
+    "month_sin",
+    "month_cos",
+    "weekday",
+    "holiday",
+    "weathersit"
+  ],
+  "excluded_leakage_columns": [
+    "cnt",
+    "casual",
+    "registered",
+    "instant"
+  ],
+  "splits": {
+    "train": {
+      "rows": 547,
+      "from": "2011-01-01",
+      "to": "2012-06-30"
+    },
+    "validation": {
+      "rows": 92,
+      "from": "2012-07-01",
+      "to": "2012-09-30"
+    },
+    "test": {
+      "rows": 92,
+      "from": "2012-10-01",
+      "to": "2012-12-31"
+    }
+  },
+  "selection_rule": "Lowest validation MAE among scikit-learn candidates; held-out test not used in selection.",
+  "validation": {
+    "ridge_alpha_1.0": {
+      "mae": 761.5409327085076,
+      "rmse": 987.4612407175601,
+      "r2": -0.1629864140241044
+    },
+    "ridge_alpha_10.0": {
+      "mae": 772.7746514898839,
+      "rmse": 1000.2109975540081,
+      "r2": -0.19321245031283318
+    },
+    "ridge_alpha_100.0": {
+      "mae": 873.666710362808,
+      "rmse": 1084.177557781412,
+      "r2": -0.40195912581399185
+    },
+    "gradient_boosting_7_leaves": {
+      "mae": 663.8699198609893,
+      "rmse": 797.4490936625377,
+      "r2": 0.2415264104533127
+    },
+    "gradient_boosting_15_leaves": {
+      "mae": 694.4358861715355,
+      "rmse": 828.9248037672286,
+      "r2": 0.18047011396035872
+    },
+    "pytorch_mlp": {
+      "mae": 921.8369750976562,
+      "rmse": 1078.0693971169017,
+      "r2": -0.38620662689208984
+    }
+  },
+  "selected_model": "gradient_boosting_7_leaves",
+  "test": {
+    "selected_model": {
+      "mae": 1033.8730699022517,
+      "rmse": 1258.904082387323,
+      "r2": 0.5698685627896127
+    },
+    "weekday_mean_baseline": {
+      "mae": 1966.0609150755686,
+      "rmse": 2241.446201323837,
+      "r2": -0.3635546238277698
+    },
+    "pytorch_mlp": {
+      "mae": 1080.1612548828125,
+      "rmse": 1303.204080334312,
+      "r2": 0.5390638709068298
+    }
+  },
+  "pytorch": {
+    "best_epoch": 213,
+    "epochs_tried": 600,
+    "hidden_units": 24,
+    "checkpoint_selection": "validation MAE",
+    "target_standardization": "train-only mean and standard deviation"
+  },
+  "scope": "Historical Washington DC 2011-2012 weather-conditional daily rental-count demo, not production demand forecasting."
+  }
