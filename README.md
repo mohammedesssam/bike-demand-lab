@@ -1,8 +1,25 @@
 # Bike Demand Lab
 
+## Repository packaging
+
+The actual Python training, API and test source is browsable in this repository.
+Original data, trained models, plots and execution evidence are supplied in a supplementary checksummed base64 archive because ordinary binary uploads failed. No external download or account is needed to restore it.
+
+After cloning or downloading this repository, run:
+
+```bash
+python restore_artifacts.py
+cd restored/bike-demand-lab
+```
+
+Then follow the original setup and test commands below from that restored directory. The archive SHA-256 is `304e3281a5ad20423b7e0dc5be5b09cde3ec7ea1cd05b4fe99e23ddcb54bdd0e`. Restoration only writes into a new `restored` directory and does not execute models or install anything. The source files in the restored package match the inspected source; its original README predates publication.
+
+Repository publication is not cloud deployment. The app was exercised locally; no cloud-hosted prediction endpoint is claimed. GitHub Actions and Docker were not executed. This is newly AI-assisted educational work, not proof of prior independent applicant experience.
+
+
 A small, reproducible, **AI-assisted educational project**: historical daily bike rental-count estimation from weather and calendar variables. Includes data validation, preprocessing, model comparison, a separate trained PyTorch network, untouched chronological evaluation, a FastAPI service and browser UI.
 
-**Status:** trained and tested locally. Not published to GitHub or a cloud service. Docker configuration is supplied but has not been built or run. This is not evidence of any applicant's prior independent experience. The applicant must understand, verify, adapt and accurately describe the work before using it in an application.
+**Status:** trained and tested locally. Published here as source plus a restorable supplementary package; not hosted as a cloud service. Docker configuration is supplied but has not been built or run. This is not evidence of any applicant's prior independent experience. The applicant must understand, verify, adapt and accurately describe the work before using it in an application.
 
 ## The question and scope
 
@@ -76,7 +93,7 @@ See `reports/metrics.json`, row-level `reports/test_predictions.csv`, and the pl
 
 ## Deployment
 
-A real local HTTP service and browser flow were exercised. Cloud hosting and GitHub publication remain undone, require the account owner's approval, and must not be described as completed deployment.
+A real local HTTP service and browser flow were exercised. GitHub source publication is separate from cloud hosting. Cloud hosting remains undone and must not be described as completed deployment.
 
 Docker configuration (not executed in this environment):
 ```bash
