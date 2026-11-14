@@ -89,7 +89,7 @@ The selected model reduces MAE by about 47.4% **relative to this simple static w
 
 See `reports/metrics.json`, row-level `reports/test_predictions.csv`, and the plot below. No model choice was made from test results. Next improvements would require a new validation protocol rather than repeatedly optimizing this already-seen test set.
 
-![Held-out predictions](reports/test_predictions.png)
+Plot: `reports/test_predictions.png` inside the restored project package.
 
 ## Deployment
 
